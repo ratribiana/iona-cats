@@ -30,7 +30,11 @@ const routes = [
       }
     ]
   },
-
+  {
+    path: '*',
+    name: 'PageNotFound',
+    component: PageNotFound
+  }
 ]
 
 const router = new VueRouter({
@@ -50,7 +54,7 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (!to.matched.length) {
-    next('/notFound')
+    next('*')
   } else {
     next()
   }

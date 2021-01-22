@@ -88,6 +88,8 @@
                 confirmButtonClass: 'btn btn-danger pr-5 pl-5',
                 reverseButtons: true,
                 confirmButtonText: 'Ok!'
+              }).then(response => {
+                this.$router.push({ path: '/' })
               })
             })
         }
