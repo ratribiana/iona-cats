@@ -1,4 +1,4 @@
-# iona-cats
+# iona-cats-exercise-vue
 
 ## Project setup
 ```

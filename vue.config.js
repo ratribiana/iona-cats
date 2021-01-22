@@ -24,6 +24,7 @@ module.exports = {
         resolve: {
           alias: {
                '@': resolveSrc('src/'),
+                api: resolveSrc('src/api/'),
                 assets: resolveSrc('src/assets/'),
                 components: resolveSrc('src/components/'),
                 container: resolveSrc('src/container/'),
