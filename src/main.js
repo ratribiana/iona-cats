@@ -9,6 +9,7 @@ import Vue from 'vue'
 import App from '@/App'
 import router from '@/router'
 import store from '@/store'
+import RegisterComponents from '@/utils/registers'
 
 // NPM: Dependency Packages
 import dotenv from 'dotenv'
@@ -19,6 +20,7 @@ dotenv.config()
 
 // Install and use dependency packages
 Vue.use(BootstrapVue)
+Vue.use(RegisterComponents)
 
 Vue.config.productionTip = false
 

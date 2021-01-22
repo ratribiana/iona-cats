@@ -33,6 +33,24 @@
               </div>
             </div>
           </div>
+          <div v-else-if="breed !== null && catsLoading" class="row pt-4 px-0">
+            <div class="col-lg-12 text-center">
+              <pulse-loader :color="'#3867d6'"></pulse-loader>
+            </div>
+          </div>
+          <div class="row pt-4">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+             <VueLoadingButton
+                  v-if="showLoadMoreButton"
+                  :disbaled="catList.length === 0 && 'disabled'"
+                  @click.native="loadMoreCats"
+                  :class= "{'disabled': catList.length === 0} "
+                  :loading=" catsLoading"
+                  class="btn btn-success"
+                  aria-label="Load more"
+              >Load more</VueLoadingButton>
+            </div>
+          </div>
         </div>
       </div>
     </div>
