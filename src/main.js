@@ -14,6 +14,7 @@ import RegisterComponents from '@/utils/registers'
 // NPM: Dependency Packages
 import dotenv from 'dotenv'
 import BootstrapVue from 'bootstrap-vue'
+import VueSweetalert2 from 'vue-sweetalert2'
 
 // Configure the module to load environment variables
 dotenv.config()
@@ -21,6 +22,7 @@ dotenv.config()
 // Install and use dependency packages
 Vue.use(BootstrapVue)
 Vue.use(RegisterComponents)
+Vue.use(VueSweetalert2)
 
 Vue.config.productionTip = false
 

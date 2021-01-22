@@ -132,9 +132,15 @@
           .then((response) => {
             this.catList = this.$store.state.cats.catList
           }).catch((err) => {
-            console.error(err)
-            err.then(error => {
-              console.error('ERROR:', { error })
+            // Handle error. There is an error from the return of the cats API or the status code is 400
+            this.$swal({
+              title: 'Warning from Cats!',
+              text: 'Apologies but we could not load new cats for you at this time! Miau!',
+              type: 'info',
+              showCancelButton: false,
+              confirmButtonClass: 'btn btn-danger pr-5 pl-5',
+              reverseButtons: true,
+              confirmButtonText: 'Ok!'
             })
           })
       },
@@ -153,7 +159,7 @@
        * if there is a query parameter for breed when the page is mounted
        ***************************************************************************/
       if (Object.keys(this.$route.query).length > 0 && 'breed' in this.$route.query) {
-        this.breed = this.$route.query.breed
+        this.breed = this.$route.query.breed || null
         this.getCatBreeds()
         this.getCats(this.page, this.limit, this.$route.query.breed)
       } else {

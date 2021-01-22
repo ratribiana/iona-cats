@@ -78,11 +78,16 @@
                   description: 'breeds' in catFromAPI && catFromAPI.breeds.length > 0 ? catFromAPI.breeds[0].description : ''
                 }
               }
-            }).catch((err) => {
-              // Handle error
-              console.error(err)
-              err.then(error => {
-                console.error('ERROR:', { error })
+            }).catch( err => {
+              // Handle error. There is an error from the return of the cats API or the status code is 400
+              this.$swal({
+                title: 'Warning from Cats!',
+                text: 'Apologies but we could not load new cats for you at this time! Miau!',
+                type: 'info',
+                showCancelButton: false,
+                confirmButtonClass: 'btn btn-danger pr-5 pl-5',
+                reverseButtons: true,
+                confirmButtonText: 'Ok!'
               })
             })
         }
