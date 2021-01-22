@@ -7,6 +7,7 @@ import VueRouter from 'vue-router'
 const Layout = () => import(/* webpackChunkName: "Layout" */ 'container/Layout')
 const CatBrowser = () => import(/* webpackChunkName: "CatsPages" */ 'views/CatBrowser')
 const CatDetails = () => import(/* webpackChunkName: "CatsPages" */ 'views/CatDetails')
+const PageNotFound = () => import(/* webpackChunkName: "Pages" */ 'views/NotFound')
 
 Vue.use(VueRouter)
 
@@ -28,7 +29,8 @@ const routes = [
         component: CatDetails
       }
     ]
-  }
+  },
+
 ]
 
 const router = new VueRouter({
@@ -44,6 +46,14 @@ const router = new VueRouter({
     return { x: 0, y: 0 };
   },
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  if (!to.matched.length) {
+    next('/notFound')
+  } else {
+    next()
+  }
 })
 
 export default router

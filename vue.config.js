@@ -17,7 +17,7 @@ module.exports = {
     css: {
       sourceMap: process.env.NODE_ENV !== 'production'
     },
-    indexPath: 'index.html',
+    indexPath: 'index.ejs',
     assetsDir: "static",
     lintOnSave: true,
     configureWebpack: {
