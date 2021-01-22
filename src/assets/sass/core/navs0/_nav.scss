@@ -1,0 +1,97 @@
+//
+// Nav
+//
+
+
+// Nav wrapper (container)
+
+// Nav wrapper
+.nav-wrapper {
+    padding: 1rem 0;
+    @include border-top-radius($card-border-radius);
+
+    + .card {
+        @include border-top-radius(0);
+        @include border-bottom-radius($card-border-radius);
+    }
+}
+
+
+// Nav links
+
+.nav-link {
+    color: $nav-link-color;
+
+    &:hover {
+        color: $nav-link-hover-color;
+    }
+
+    i.ni {
+        position: relative;
+        top: 2px;
+    }
+}
+
+// Side Nav
+.side-nav {
+  display: block;
+  list-style: none;
+  padding-left: 0;
+
+  .side-nav-item {
+      a {
+        color: $gray-700;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        display: block;
+        border-radius: 4px;
+
+        i {
+          color: $gray-700;
+          margin-right: 1rem;
+        }
+        &:hover {
+          color: $primary;
+          i {
+            color: $primary;
+          }
+          .permission-list {
+            li {
+              i {
+                color: $primary;
+              }
+            }
+          }
+        }
+        &:active,
+        &.active {
+            background-color: $primary;
+            color: $white;
+          i {
+            color: $white;
+          }
+          .permission-list {
+            li {
+              i {
+                color: $white;
+              }
+            }
+          }
+        }
+        .permission-list {
+          display: block;
+          font-size: .75rem;
+          margin-left: 2rem;
+          li {
+            display: inline-block;
+            i {
+              color: $gray-800;
+            }
+          }
+        }
+      }
+      .side-nav {
+        padding-left: 2rem;
+      }
+    }
+  }

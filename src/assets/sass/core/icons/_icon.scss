@@ -1,0 +1,412 @@
+//
+// Icon
+//
+
+.icon {
+	width: $icon-size;
+	height: $icon-size;
+
+	i, svg {
+		font-size: $icon-size - .75;
+	}
+
+    + .icon-text {
+    	padding-left: 1rem;
+    	width: calc(100% - #{$icon-size} - 1);
+    }
+}
+
+
+// Extra large icons
+
+.icon-xl {
+	width: $icon-size-xl;
+	height: $icon-size-xl;
+
+	i, svg {
+		font-size: $icon-size-xl - .75;
+	}
+
+    + .icon-text {
+    	width: calc(100% - #{$icon-size-xl} - 1);
+    }
+}
+
+
+// Large icons
+
+.icon-lg {
+	width: $icon-size-lg;
+	height: $icon-size-lg;
+
+	i, svg {
+		font-size: $icon-size-lg - .75;
+	}
+
+    + .icon-text {
+    	width: calc(100% - #{$icon-size-lg} - 1);
+    }
+}
+
+
+// Small icon
+
+.icon-sm {
+	width: $icon-size-sm;
+	height: $icon-size-sm;
+
+	i, svg {
+		font-size: $icon-size-sm - .75;
+	}
+
+    + .icon-text {
+    	width: calc(100% - #{$icon-size-sm} - 1);
+    }
+}
+
+// Extra Small icon
+
+.icon-xs {
+	width: $icon-size-xs;
+	height: $icon-size-xs;
+
+	i, svg {
+		font-size: $icon-size-xs - .75;
+	}
+
+    + .icon-text {
+    	width: calc(100% - #{$icon-size-xs} - 1);
+    }
+}
+
+.heading-icon-money {
+  &:before {
+    content: "\f0d6" !important;
+  }
+}
+
+.heading-icon-line-chart {
+  &:before {
+    content: "\f201" !important;
+  }
+}
+
+.heading-icon-shopping-cart {
+  &:before {
+    content: "\f07a" !important;
+  }
+}
+
+.heading-icon-heart {
+  &:before {
+    content: "\f004" !important;
+  }
+}
+
+.heading-icon-minus-circle {
+  &:before {
+    content: "\f056" !important;
+  }
+}
+
+.heading-icon-file-text {
+  &:before {
+    content: "\f15c" !important;
+  }
+}
+
+.heading-icon-smile-o {
+  &:before {
+    content: "\f118" !important;
+  }
+}
+
+.heading-icon-angle-double-right {
+  &:before {
+    content: "\f101" !important;
+  }
+}
+
+.heading-icon-users {
+  &:before {
+    content: "\f0c0" !important;
+  }
+}
+
+.heading-icon-flash {
+  &:before {
+    content: "\f0e7" !important;
+  }
+}
+
+.heading-icon-arrows-h {
+  &:before {
+    content: "\f07e" !important;
+  }
+}
+
+.heading-icon-trophy {
+  &:before {
+    content: "\f091" !important;
+  }
+}
+
+.circle-icon {
+  border-radius: 50%;
+  font-size: 1.125rem;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.payment-icon {
+  width: 40px;
+  height: 40px;
+}
+
+// State Icon
+i[class*='icon-'] {
+	font-family: 'FontAwesome' !important;
+	font-size: inherit;
+	font-style: normal;
+}
+
+.icon-check-circle {
+  &:before {
+    content: "\f058";
+  }
+}
+
+.icon-check-circle-o {
+  &:before {
+    content: "\f05d";
+  }
+}
+
+.icon-warning {
+  &:before {
+    content: "\f071";
+  }
+}
+
+.icon-exclamation-circle {
+  &:before {
+    content: "\f06a";
+  }
+}
+
+.icon-info-circle {
+  &:before {
+    content: "\f05a";
+  }
+}
+
+
+// Data Icon
+
+.icon-suitcase {
+  &:before {
+    content: "\f0f2";
+  }
+}
+
+.icon-area-chart {
+  &:before {
+    content: "\f1fe";
+  }
+}
+
+.icon-users {
+  &:before {
+    content: "\f0c0";
+  }
+}
+
+.icon-flash {
+  &:before {
+    content: "\f0e7";
+  }
+}
+
+.icon-angle-double-right {
+  &:before {
+    content: "\f101";
+  }
+}
+
+.icon-arrows-h {
+  &:before {
+    content: "\f07e";
+  }
+}
+
+.icon-credit-card-alt {
+  &:before {
+    content: "\f283";
+  }
+}
+
+.icon-line-chart {
+  &:before {
+    content: "\f201";
+  }
+}
+
+.icon-phone {
+  &:before {
+    content: "\f095";
+  }
+}
+
+.icon-at {
+  &:before {
+    content: "\f1fa";
+  }
+}
+
+.icon-map {
+  &:before {
+    content: "\f279";
+  }
+}
+
+.icon-map-marker {
+  &:before {
+    content: "\f041";
+  }
+}
+
+.icon-circle {
+  &:before {
+    content: "\f111";
+  }
+}
+
+.icon-trophy {
+  &:before {
+    content: "\f091";
+  }
+}
+
+// Social Icon
+.icon-facebook-official {
+  &:before {
+    content: "\f230";
+  }
+}
+
+.icon-twitter {
+  &:before {
+    content: "\f099";
+  }
+}
+
+
+//Modal
+
+.modal-icon-shield {
+  .modal-header {
+    &:before {
+      content: "\f132";
+    }
+  }
+}
+
+.modal-icon-newspaper-o, .modal-icon-news {
+  .modal-header {
+    &:before {
+      content: "\f1ea";
+    }
+  }
+}
+
+.modal-icon-cog {
+  .modal-header {
+    &:before {
+      content: "\f013";
+    }
+  }
+}
+
+.modal-icon-user {
+  .modal-header {
+    &:before {
+      content: "\f007";
+    }
+  }
+}
+
+.modal-icon-check, .modal-icon-success, .modal-icon-valid {
+  .modal-header {
+    &:before {
+      content: "\f00c";
+      background-color: $success !important;
+    }
+  }
+}
+
+.modal-icon-trophy{
+  .modal-header {
+    &:before {
+      content: "\f091";
+    }
+  }
+}
+
+.modal-icon-star{
+  .modal-header {
+    &:before {
+      content: "\f005";
+    }
+  }
+}
+
+
+.modal-icon-exclamation-triangle, .modal-icon-danger, .modal-icon-invalid {
+  .modal-header {
+    &:before {
+      content: "\f071";
+      background-color: $danger !important;
+    }
+  }
+}
+
+.modal-icon-exclamation-circle, .modal-icon-warning {
+  .modal-header {
+    &:before {
+      content: "\f06a";
+      background-color: $warning !important;
+    }
+  }
+}
+
+.modal-icon-info {
+  .modal-header {
+    &:before {
+      content: "\f129";
+      background-color: $info !important;
+    }
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .heading-icon {
+    margin-left: 50px;
+    position: relative;
+    &:before {
+      content: "";
+      width: 30px;
+      height: 30px;
+      background-size: 30px;
+      position: absolute;
+      left: -40px;
+      display: block;
+      background-repeat: no-repeat;
+
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+  }
+}
