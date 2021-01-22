@@ -119,12 +119,29 @@
               console.error('ERROR:', { error })
             })
           })
+      },
+      loadMoreCats () {
+        this.catsLoading = true
+        this.page += 1
+        this.getCats(this.page, this.limit, this.breed)
       }
     },
     mounted () {
       // Assigned route name as the title of the page
       this.title = this.$route.name
-      this.getCatBreeds()
+
+      /***************************************************************************
+       * Call the methods that will dispatch an action for getting the cat data
+       * if there is a query parameter for breed when the page is mounted
+       ***************************************************************************/
+      if (Object.keys(this.$route.query).length > 0 && 'breed' in this.$route.query) {
+        this.breed = this.$route.query.breed
+        this.getCatBreeds()
+        this.getCats(this.page, this.limit, this.$route.query.breed)
+      } else {
+        // if no query parameter for breed load the list of cat breeds
+        this.getCatBreeds()
+      }
     }
   }
 </script>
