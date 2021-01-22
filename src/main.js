@@ -12,9 +12,13 @@ import store from '@/store'
 
 // NPM: Dependency Packages
 import dotenv from 'dotenv'
+import BootstrapVue from 'bootstrap-vue'
 
 // Configure the module to load environment variables
 dotenv.config()
+
+// Install and use dependency packages
+Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
