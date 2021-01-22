@@ -19,6 +19,20 @@
               </b-form-select>
             </div>
           </div>
+          <div class="row pt-4 px-0" v-if="catList.length > 0 && !catsLoading">
+            <div class="col-lg-12 col-md-12 col-sm-12 px-0">
+              <div v-for="(cat, index) in catList" :key="index" class="item-container col-lg-3 col-md-3 col-sm-12 mb-4">
+                <div class="cat-item">
+                  <div class="cat-item-image">
+                    <img :src="cat.url" >
+                  </div>
+                  <div class="cat-item-button-details text-center">
+                    <router-link :to="`/${cat.id}`" exact class="btn btn-primary opacity-8 text-white w-100" > View details</router-link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -45,6 +59,15 @@
         // Loading state for cat breeds
         return this.$store.state.cats.catBreedLoading
       },
+      catsLoading: {
+        // Loading state for cats
+        get: function () {
+          return this.$store.state.cats.catsLoading
+        },
+        set: function (newValue) {
+          return newValue
+        }
+      },
       breeds () {
         // Computed property for cat breeds (reactive)
         let data = []
@@ -67,12 +90,35 @@
         set: function (newValue) {
           return newValue
         }
+      },
+      showLoadMoreButton: {
+        // Checking if the end of the list of the cats is already reached
+        get: function () {
+          return !this.$store.state.cats.catListReachEndList
+        },
+        set: function (newValue) {
+          return newValue
+        }
       }
     },
     methods: {
       getCatBreeds () {
         // Dispatch cat breeds action to fetch the data from API endpoint
         this.$store.dispatch('cats/GET_CAT_BREEDS')
+      },
+      getCats (page, limit, breedID) {
+        // Assign the current breed ID so it can use for load more functionality
+        this.breed = breedID
+        // Dispatch cats action to fetch the cat info from API endpoint
+        this.$store.dispatch('cats/GET_CATS', { page, limit, breedID })
+          .then((response) => {
+            this.catList = this.$store.state.cats.catList
+          }).catch((err) => {
+            console.error(err)
+            err.then(error => {
+              console.error('ERROR:', { error })
+            })
+          })
       }
     },
     mounted () {
